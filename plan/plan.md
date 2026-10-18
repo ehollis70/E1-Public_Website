@@ -1,39 +1,39 @@
-# Employees First — Brand-Faithful Re-skin of the Landing Page
+# SEO Pack — Sitemap, Social Share Cards & Search Enhancements
 
-A single-page recreation of myemployeesfirst.com, re-skinned with the company's real brand kit: the actual wordmark and E icon, the exact brand palette, Garamond-style display type with Source Sans body copy, and the logo's orange arrow repurposed as the site's signature motif. The page moves bright and optimistic like the style guide demands, with deep navy saved for the moments that matter.
+Makes the Employees First landing page discoverable by search engines and AI answer engines, and gives it a proper card when the link is shared on LinkedIn, WhatsApp, Facebook, or iMessage. All tags are pointed at www.myemployeesfirst.com, the confirmed production domain.
+
+**Production-site safety, answered directly: no. Nothing in this work touches your live website.** Every change is made inside this preview app's own code. Your current Wix site at myemployeesfirst.com is not logged into, not edited, and not affected in any way — it keeps running exactly as is. The new tags only matter if and when you choose to publish this app onto that domain; until then your production site is untouched.
 
 ## Who it's for
-- **Primary:** CFO, HR, and Total Rewards leaders at mid-to-large employers who buy or renew voluntary benefits (Accident, Hospital Indemnity, Critical Illness).
-- **Secondary:** Brokers and consultants evaluating the Employees First model on behalf of clients.
+- Search engines (Google, Bing) and AI answer engines (ChatGPT, Claude, Perplexity, Apple Intelligence) that need complete content signals to index and cite the page.
+- People sharing the link socially, who should see a polished preview card instead of a bare URL.
 
 ## Core features and experience
-1. **Real brand identity everywhere** — the uploaded primary wordmark (navy EMPLOYEES / orange first) in the nav and footer on light surfaces; the reverse variant (light-blue/orange) on deep-navy bands; the E icon as the favicon and small-format mark; clear space respected, logo never recolored or distorted.
-2. **Hybrid theme (user's choice)** — a bright, naturally lit hero and light paper sections carry the page; exactly two deep-navy feature bands: the "over 25% savings" stat moment and the marquee band; navy footer to close.
-3. **Signature arrow motif** — the orange arrow from the logo becomes the recurring device: up-right arrows in every CTA, arrow tick markers on lists, arrow separators in the marquee, a large ghosted arrow behind the 25% stat — "forward motion" as the guide prescribes.
-4. **Brand typography** — Garamond Pro stand-in (Cormorant Garamond) for headings and call-outs; Source Sans (web version of Source Sans Pro) for body, labels, and CTAs; grey #54575A body text per the guide.
-5. **Exact brand palette** — navy #003A70, light blue #009ADE, orange #FF9E1B as accents; warm neutrals #F4F6F0 / #ECE9DF for light grounds; secondary spot colors (yellow #FFC72C, green #C2D500) used only sparingly as keyword highlights.
-6. **Bright optimistic photography** — the original site's naturally lit people photos, clipped in arch/rounded frames with soft spotlight glows; the dark money-light photo treatment is retired per the guide's "no dark or dim imagery."
-7. **Kinetic hero kept, re-lit** — masked line-by-line "A CFO For Your Voluntary Benefits" reveal on load, the $44,000,000 stat card as the signature moment, subtle parallax on the hero photo, dual CTAs.
-8. **Everything else from the approved recreation stays** — four transparency pillars bento, check-up banner, How It Works (4 steps, guarantee, 6 reinvestment options, 60-second video poster card), Program Services, Our Story with Amy Hollis spotlight, team grid (10) + advisory strip (10) with real headshots and LinkedIn links, one slow marquee, and the working contact form saved to the database.
+1. **Complete static head** — proper title (50–60 chars) and description (150–160 chars) written from the page's own copy, canonical link to https://www.myemployeesfirst.com/, index/follow robots directive, and the current stale defaults fully replaced.
+2. **Social share cards** — Open Graph and Twitter card tags driven by the chosen share image: the hero employee photo, center-cropped to exactly 1200×630 and shipped as a real hosted asset, with correct dimensions and alt text.
+3. **Structured data (JSON-LD)** — an Organization node (name, description, url, logo, image) plus a Person node for founder Amy Hollis using her verbatim title. Nothing invented: no ratings, reviews, addresses, phone numbers, or social profiles that aren't confirmed.
+4. **No-JS content fallback** — a noscript block carrying the page's real h1 and opening paragraph, so non-JS crawlers and social scrapers index actual content instead of an empty shell.
+5. **robots.txt** — allows all search and AI crawlers, names them in an explicit group (Googlebot, Bingbot, GPTBot, OAI-SearchBot, ChatGPT-User, ClaudeBot, Claude-SearchBot, PerplexityBot, Google-Extended, Applebot, Applebot-Extended, meta-externalagent, facebookexternalhit, Twitterbot, Amazonbot, CCBot), keeps every crawler off /api/, and points to the sitemap.
+6. **sitemap.xml** — one clean entry for the homepage at the production domain with a real lastmod date.
+7. **llms.txt** — a plain-text summary of what the company does, who it serves, and what's on the page, written only from verifiable page content (no prices, no contact details, no unconfirmed claims).
+8. **On-page hygiene audit** — exactly one h1, alt text on every meaningful image, all navigation as real anchor links, key copy as selectable text; fix any gaps found.
+9. **Icons** — favicon already ships as the real E icon; add the apple-touch-icon so iOS shares and bookmarks render the mark.
 
 ## User flow
-Land on a bright hero → the headline reveals line by line and the $44M card lands → scroll through light sections (pillars, check-up, how it works, services, story, team) → the page dips into deep navy for the 25% stat band and marquee, then returns to light for the contact form → any Get Started jumps to the form → submit and see confirmation.
+A crawler or AI bot fetches the page → reads the static head, noscript fallback, and JSON-LD without running JavaScript → follows robots.txt to the sitemap → indexes one clean canonical URL. A person pastes the link into LinkedIn or WhatsApp → the scraper reads the OG tags → the hero photo renders as the link preview card. Human visitors see no change: the design, motion, and content stay exactly as approved.
 
 ## UI/UX feel
-- **"Forward, First" — bright optimism on brand paper.** Airy white and warm-neutral sections with navy editorial serif headlines; the orange arrow injecting energy; deep navy used like ink for a stamp — sparingly, where the numbers deserve gravity.
-- Photography always bright, naturally lit, authentically human; rounded/arch clipped frames with gentle hover motion.
-- Premium motion: masked text reveals, staggered section fades, magnetic CTAs, counters, lenis momentum scrolling, one subtle hero parallax; Awwwards-level craft, nothing decorative for its own sake.
-- Fully responsive; mobile is a first-class layout.
+Zero visual change to the page itself — the award-level design stays untouched. The only new visible artifact is the 1200×630 share card (the bright hero photo), seen only inside social apps and chat clients.
 
 ## Implementation phases
-- **Phase 1 — MVP (built now):** full brand re-skin of the existing single page: real logos + SVG E-icon favicon, font swap to Source Sans, hybrid light/navy section re-theming, arrow motif system, photography swap to bright imagery, and motion polish across all sections; contact form re-verified end-to-end.
-- **Phase 2:** embed the real 60-second program video when its file/URL is supplied; blog feed and podcast section; standalone sub-pages mirroring the original URL structure.
-- **Phase 3:** SEO/sitemap/social-card polish, analytics, and wiring the contact form to the company's real inbox/CRM.
+- **Phase 1 — MVP (built now):** everything above, inside the preview app: head overhaul, share-card image, JSON-LD, noscript fallback, robots.txt, sitemap.xml, llms.txt, hygiene audit, and verification (real files served, valid JSON-LD, no placeholder or preview-host URLs anywhere, app still renders cleanly on desktop and mobile).
+- **Phase 2 (after you deploy):** you press Deploy, turn on the platform's search-engine-crawling toggle, and the tags go live; then verify the live domain serves rendered content to Googlebot and AI crawlers, submit the sitemap in Google Search Console, and re-scrape the share card in Facebook/LinkedIn debuggers (those platforms cache aggressively).
+- **Phase 3:** grow the sitemap and per-route tags if sub-pages are added; add an FAQ section with matching FAQ structured data for richer AI citations; analytics.
 
 ## Assumptions
-- "Hybrid" means the hero and most sections go bright/light, with deep navy reserved for the 25% stat band, the marquee band, and the footer — the exact split is my call.
-- Source Sans 3 (Google Fonts) is the faithful web version of the brand's Source Sans Pro; Cormorant Garamond continues as the Garamond Pro stand-in.
-- The uploaded logo JPGs carry baked-in white backgrounds, so the primary wordmark is used only on white/light surfaces and the reverse variant on navy ones.
-- All copy, names, stats ($44,000,000 since 2023; over 25% first-year savings), team roles, and headshots stay exactly as in the approved recreation; nothing new is invented.
-- The logo mark's favicon is redrawn as a crisp SVG matching the uploaded E icon (navy rounded square, white E, orange arrow) so it stays sharp at small sizes.
-- No new third-party integrations are needed for this re-skin.
+- Domain: www.myemployeesfirst.com is used consistently in canonical, og:url, og:image, sitemap, robots, and JSON-LD. It only takes effect when this app is deployed to that domain — a step you control; nothing changes on the live Wix site now.
+- Share image: the hero employee photo, cropped to 1200×630 with no added text.
+- JSON-LD type is Organization (B2B benefits company) with the founder Person node; the company's own LinkedIn profile is not confirmed, so sameAs is omitted rather than guessed.
+- No FAQPage structured data yet — the page has no FAQ section, and the skill's rule requires on-page content to match.
+- The site is single-page, so no per-route meta library (react-helmet-async) is added — the static head covers every crawler.
+- Indexing speed is not instant: days-to-weeks and requires Google Search Console submission, which is a Phase 2, post-deploy step.

@@ -36,6 +36,7 @@
 - **P1:** Email/CRM forwarding of contact submissions (replaces original HubSpot form).
 - **P2:** Blog feed and Benefits Companion Podcast sections; standalone sub-pages mirroring original URL structure.
 - **P2:** SEO/sitemap/social-card polish, analytics.
+  - SEO/sitemap/social-card polish: DONE 2026-10-18 (head overhaul, og-image 1200×630, JSON-LD Organization + founder Person, noscript fallback, robots.txt, sitemap.xml, llms.txt, apple-touch-icon, hygiene audit — all verified in preview; live effect requires redeploy + search-crawling toggle + GSC submission).
 - **P2:** Custom 404 + og-image assets.
 
 ## Notes
