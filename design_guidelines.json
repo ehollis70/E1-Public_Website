@@ -1,0 +1,93 @@
+{
+  "theme": "hybrid",
+  "art_direction": "The Invisible, Made Visible — deep navy dominant ground, luminous light-blue and brand amber sharp accents. Money-light motif moving from darkness to light. Dark editorial sections alternating with light ones mirroring opaque vs transparent.",
+  "typography": {
+    "heading_font": "Cormorant Garamond",
+    "body_font": "Outfit",
+    "pairing_strategy": "Distinctive serif display paired with clean geometric sans. Avoid Inter/Roboto. Echoes original Garamond + Avenir pairing but upgraded.",
+    "scale_rules": "H1 up to text-6xl (mobile text-4xl). Massive stats like $44,000,000 can be text-[8vw] leading-none tracking-tighter."
+  },
+  "colors": {
+    "primary": "#003A70",
+    "secondary": "#009ADE",
+    "accent": "#FF9E1B",
+    "background_dark": "#04182E",
+    "background_light": "#F8F9FA",
+    "surface_glass": "bg-white/5 backdrop-blur-xl border border-white/10"
+  },
+  "visual_enhancers": {
+    "spotlight_treatment": "Use radial gradients in the background to create a spotlight effect in dark sections, focusing on the content.",
+    "parallax": "Subtle parallax on real photography. Clipped frames for images.",
+    "glassmorphism": "Use on sticky nav and overlay cards over dark sections. No pure transparent backgrounds for headers.",
+    "bento_grid": "For the Four Transparency Pillars (Exact Claims Paid, Reserves & Admin Costs, All Compensation, Carrier Charges)."
+  },
+  "sections_and_layouts": [
+    "Sticky Nav: Glassmorphism header, solid contrast on scroll. Links: How It Works, Program Services, Our Story, Our Team, Contact + Get Started.",
+    "Kinetic Hero: 'A CFO For Your Voluntary Benefits', massive $44,000,000 stat counter, money-light motif.",
+    "Four Transparency Pillars: Bento grid highlighting the 4 pillars with icons and short text.",
+    "25% Savings Stat Moment: Full width, dark background, massive typography.",
+    "Blue Check-up Banner: Luminous light-blue background, bold amber CTA.",
+    "How It Works: 'We Make the Invisible, Visible', 6 reinvestment options, and a 60-second video poster card.",
+    "Program Services: 4-column card grid.",
+    "Our Story: Editorial section with founder Amy Hollis spotlight.",
+    "Our Team & Advisory: Grid of 10 team members + strip of 10 advisory members.",
+    "Marquee Band: Continuous scrolling text or client logos.",
+    "Contact Form: 'Let's Start a Conversation'.",
+    "Footer: Deep navy, expansive layout."
+  ],
+  "motion": {
+    "libraries": [
+      "framer-motion",
+      "lucide-react",
+      "react-countup",
+      "@studio-freight/react-lenis"
+    ],
+    "interactions": [
+      "Framer-motion scroll reveals",
+      "Staggered masked text for headings",
+      "Magnetic hover on CTAs (Brand Amber)",
+      "Counters for 25% and $44M stats",
+      "Lenis momentum scrolling"
+    ]
+  },
+  "image_urls": {
+    "hero_motif": {
+      "url": "https://images.unsplash.com/photo-1679256462959-7873b4b9f97a?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDJ8MHwxfHNlYXJjaHwzfHxtb25leSUyMGZpbmFuY2UlMjBsaWdodCUyMGFic3RyYWN0fGVufDB8fHx8MTc5MjM0MDg4MHww&ixlib=rb-4.1.0&q=85",
+      "description": "Lit up dollar sign in the dark, fitting the money-light motif."
+    },
+    "founder_spotlight": {
+      "url": "https://images.unsplash.com/photo-1585240975858-7264fd020798?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NzB8MHwxfHNlYXJjaHw0fHxwcm9mZXNzaW9uYWwlMjBjb3Jwb3JhdGUlMjBoZWFkc2hvdCUyMHdvbWFufGVufDB8fHx8MTc5MjM0MDg4MHww&ixlib=rb-4.1.0&q=85",
+      "description": "Professional woman in black blazer, used for Founder Amy Hollis."
+    },
+    "video_poster": {
+      "url": "https://images.pexels.com/photos/8068807/pexels-photo-8068807.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "description": "Culturally diverse team engaged in a serious business discussion in an office setting. Used for 60-second video poster."
+    },
+    "team_placeholder": {
+      "url": "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NzB8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBjb3Jwb3JhdGUlMjBoZWFkc2hvdCUyMHdvbWFufGVufDB8fHx8MTc5MjM0MDg4MHww&ixlib=rb-4.1.0&q=85",
+      "description": "Professional woman on focus. Re-use or mix with other Unsplash professional avatars for the 10-person grids."
+    }
+  },
+  "accessibility": {
+    "contrast": "Ensure APCA standards. Light-blue and amber accents must have dark text if used as backgrounds.",
+    "testing": "All interactive and key informational elements MUST include a data-testid attribute."
+  },
+  "instructions_to_main_agent": [
+    "You must create a React single-page application based on these exact guidelines.",
+    "Use framer-motion for staggering text and scroll reveals (e.g., whileInView).",
+    "Use react-countup for the $44,000,000 and 25% stats.",
+    "Implement Lenis smooth scrolling inside a useEffect at the root component.",
+    "Alternate sections between deep navy and stark white to represent invisible/visible.",
+    "Ensure all interactive elements (buttons, links, form inputs) have a data-testid attribute (e.g., data-testid='contact-submit-button').",
+    "Never use pure transparent backgrounds for the sticky header; always use backdrop-blur and a semi-transparent fill.",
+    "Use Lucide-react for any icons required (e.g., arrows, pillars, checks).",
+    "Create the .js (not .tsx) files since the project uses JS."
+  ],
+  "UNIVERSAL_GUIDELINES_FOR_MAIN_AGENT": [
+    "Do not center-align everything. Use asymmetry and grid structures.",
+    "Avoid AI-slop gradients. Use solid colors with subtle lighting (radial gradients) to create depth in dark sections.",
+    "Ensure micro-animations on all buttons and hover states.",
+    "Ensure images are clipped inside structured frames with subtle hover parallax.",
+    "Strictly avoid emojis in code/UI."
+  ]
+}

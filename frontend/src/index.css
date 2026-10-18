@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Outfit:wght@200;300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --navy: #003A70;
+  --deep: #04182E;
+  --deeper: #02101F;
+  --sky: #009ADE;
+  --amber: #FF9E1B;
+  --paper: #F8F9FA;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+body {
+  margin: 0;
+  font-family: "Outfit", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: var(--deep);
+  color: #0B2545;
+}
+
+::selection {
+  background: var(--amber);
+  color: var(--deeper);
+}
+
+.font-display {
+  font-family: "Cormorant Garamond", serif;
+}
+
+/* Film grain / noise overlay */
+.grain::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.5;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.32'/%3E%3C/svg%3E");
+}
+
+/* Spotlight radial glow for dark sections */
+.spotlight {
+  background:
+    radial-gradient(ellipse 55% 45% at 70% 20%, rgba(0, 154, 222, 0.16), transparent 65%),
+    radial-gradient(ellipse 40% 35% at 15% 80%, rgba(255, 158, 27, 0.09), transparent 60%),
+    var(--deep);
+}
+
+/* Marquee */
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 42s linear infinite;
+}
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+/* Amber underline draw for links */
+.link-draw {
+  position: relative;
+}
+.link-draw::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  height: 1.5px;
+  width: 100%;
+  background: var(--amber);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.link-draw:hover::after,
+.link-draw.is-active::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Photo frame hover parallax */
+.photo-frame img {
+  transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.photo-frame:hover img {
+  transform: scale(1.045);
+}
+
+input,
+textarea {
+  outline: none;
+}
+
+.field {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 2px;
+  padding: 14px 16px;
+  color: #fff;
+  font-size: 15px;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+.field::placeholder {
+  color: rgba(255, 255, 255, 0.38);
+}
+.field:focus {
+  border-color: var(--sky);
+  background: rgba(0, 154, 222, 0.07);
+}

@@ -1,0 +1,42 @@
+# PRD — Employees First Landing Page Recreation
+
+## Original Problem Statement
+"Build a landing page: Can you scan my existing website and recreate it?" — a single-page, award-caliber recreation of myemployeesfirst.com keeping every message, claim, and section of the original site, with a bold editorial design, premium motion, a signature kinetic hero, and a working contact form.
+
+## User Personas
+- **Primary:** CFO, HR, and Total Rewards leaders at mid-to-large employers who buy or renew voluntary benefits (Accident, Hospital Indemnity, Critical Illness) and suspect hidden value is leaking to carriers.
+- **Secondary:** Brokers and consultants evaluating the Employees First model for clients.
+
+## Architecture
+- React (CRA + CRACO) single-page frontend, Tailwind custom theme (navy #003A70 / deep #04182E / sky #009ADE / amber #FF9E1B / paper #F8F9FA), fonts: Cormorant Garamond (display) + Outfit (body).
+- framer-motion (masked line reveals, scroll reveals, magnetic CTAs), lenis (momentum scrolling), react-countup ($44M, 25% counters).
+- FastAPI backend: POST/GET /api/contact storing submissions in MongoDB (contact_submissions collection), PyObjectId/BaseDocument pattern.
+- Logo redrawn as original SVG mark (LogoMark) + favicon.svg.
+
+## Sections (all copy verbatim from live site, crawled 2026-10-18)
+1. Sticky glass nav (How It Works, Program Services, Our Story, Our Team, Contact, Get Started) + mobile overlay menu
+2. Kinetic hero: "A CFO For Your Voluntary Benefits", $44,000,000 stat card, arch photo (original brand photo), dual CTAs
+3. Pillars: "Bring More Value to Your People" — Exact Claims Paid / Reserves & Admin Costs / All Compensation / Carrier Charges bento + "We've already found them" strip + Protect/Elevate/Leverage row
+4. Stat moment: "Most employers see over 25% savings in the first year" with counter + money-light backdrop
+5. Check-up banner (sky blue): "…let us do the heavy lifting" + Learn More
+6. How It Works: "We Make the Invisible, Visible", 4-step model, guarantee card, 6 reinvestment options, 60-second overview poster card
+7. Program Services: Plan Analytics (SHOp), Program Management, Compliance Oversight, Employer Dashboard
+8. Our Story: "Do the right thing." / Always., mission, Amy Hollis founder spotlight (20+ yrs; WTW, Buck, Marsh McLennan; ~half of Fortune 500)
+9. Our Team: 10 leadership cards with real headshots + LinkedIn; advisory strip of 10 (board, actuaries, consultants)
+10. Marquee band: Transparency · Visibility · Control · Employees First
+11. Contact: "Let's Start a Conversation" working form → MongoDB, success confirmation
+12. Footer: site anchors + Blog/Podcast links to original site + copyright
+
+## Implemented (2026-10-18)
+- Full Phase 1 as approved. Backend contact API verified with curl (create + list). Form submit → success state verified in preview. Desktop (1440) and mobile (390) screenshot passes clean, no horizontal overflow.
+
+## Backlog
+- **P1:** Embed the real 60-second program video when file/URL supplied (poster card is a placeholder).
+- **P1:** Email/CRM forwarding of contact submissions (replaces original HubSpot form).
+- **P2:** Blog feed and Benefits Companion Podcast sections; standalone sub-pages mirroring original URL structure.
+- **P2:** SEO/sitemap/social-card polish, analytics.
+- **P2:** Custom 404 + og-image assets.
+
+## Notes
+- Advisory strip intentionally includes all real advisors found on the live site (Heather Christie, Steve Cyboran, Erik Sossa, Bill Weyers, Debra Walker, Mimi Leonard, Keith Morrison, Sanjiv Anand, Anne Marie Towle, Caroline Cyboran) plus Jenna Olberding in the leadership grid — faithful to source.
+- No credentials/auth in this app; test_credentials.md not applicable.
