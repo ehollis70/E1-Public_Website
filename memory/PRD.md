@@ -37,6 +37,7 @@
 - **P2:** Blog feed and Benefits Companion Podcast sections; standalone sub-pages mirroring original URL structure.
 - **P2:** SEO/sitemap/social-card polish, analytics.
   - SEO/sitemap/social-card polish: DONE 2026-10-18 (head overhaul, og-image 1200×630, JSON-LD Organization + founder Person, noscript fallback, robots.txt, sitemap.xml, llms.txt, apple-touch-icon, hygiene audit — all verified in preview; live effect requires redeploy + search-crawling toggle + GSC submission).
+  - FAQ section with matching FAQPage structured data: DONE 2026-10-18 (6 Q&As composed only from existing on-page claims, accordion UI, FAQPage JSON-LD verified to match on-page text exactly; section placed between Our Team and the marquee; llms.txt updated).
 - **P2:** Custom 404 + og-image assets.
 
 ## Notes
