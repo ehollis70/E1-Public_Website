@@ -37,8 +37,8 @@ export default function Pillars() {
         <div className="grid lg:grid-cols-12 gap-10 items-end">
           <div className="lg:col-span-7">
             <Reveal>
-              <p className="flex items-center gap-3 text-[12px] font-medium tracking-[0.28em] uppercase text-sky mb-6">
-                <span className="h-px w-10 bg-sky/70" /> Transparency
+              <p className="flex items-center gap-3 text-[12px] font-bold tracking-[0.26em] uppercase text-sky mb-6">
+                <span className="h-[3px] w-10 rounded-full bg-amber" /> Transparency
               </p>
             </Reveal>
             <h2 className="font-display text-navy text-4xl sm:text-5xl lg:text-6xl leading-[1.02] tracking-tight">
@@ -47,10 +47,10 @@ export default function Pillars() {
           </div>
           <div className="lg:col-span-5">
             <Reveal delay={0.15}>
-              <p className="text-lg text-ink/70 leading-relaxed font-light">
+              <p className="text-lg text-ink leading-relaxed font-light">
                 The Employees First ERISA-compliant financial model creates full transparency to give employers
                 visibility and control of Accident, Hospital Indemnity, and Critical Illness policies.
-                <span className="text-navy font-medium"> What you'll see:</span>
+                <span className="text-navy font-bold"> What you'll see:</span>
               </p>
             </Reveal>
           </div>
@@ -61,29 +61,29 @@ export default function Pillars() {
             <Reveal key={p.title} delay={i * 0.08} className="h-full">
               <div
                 data-testid={`pillar-card-${i}`}
-                className="group h-full rounded-2xl border border-navy/10 bg-white p-7 transition-all duration-500 hover:border-sky/50 hover:shadow-[0_20px_50px_-20px_rgba(0,58,112,0.25)] hover:-translate-y-1"
+                className="group h-full rounded-2xl border border-navy/10 bg-white p-7 shadow-[0_16px_40px_-30px_rgba(0,58,112,0.35)] transition-all duration-500 hover:border-sky hover:shadow-[0_20px_50px_-20px_rgba(0,58,112,0.3)] hover:-translate-y-1"
               >
-                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-navy/5 text-navy transition-colors duration-500 group-hover:bg-sky group-hover:text-white">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-sky/10 text-sky transition-colors duration-500 group-hover:bg-sky group-hover:text-white">
                   <p.icon className="h-5 w-5" />
                 </div>
                 <h3 className="mt-6 font-display text-2xl text-navy">{p.title}</h3>
-                <p className="mt-2 text-[15px] text-ink/60 leading-relaxed">{p.desc}</p>
+                <p className="mt-2 text-[15px] text-ink leading-relaxed">{p.desc}</p>
               </div>
             </Reveal>
           ))}
         </div>
 
         <Reveal delay={0.1}>
-          <div className="mt-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 rounded-2xl bg-navy px-8 py-8 lg:px-12" data-testid="pillars-found-strip">
-            <p className="font-display text-2xl lg:text-3xl text-white italic">
+          <div className="mt-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 rounded-2xl bg-sand border border-navy/10 px-8 py-8 lg:px-12" data-testid="pillars-found-strip">
+            <p className="font-display text-2xl lg:text-3xl text-navy italic">
               "If these dollars exist, you don't need to go searching for them.{" "}
-              <span className="text-amber">We've already found them.</span>"
+              <span className="text-amber not-italic font-bold">We've already found them.</span>"
             </p>
             <Magnetic
               as="button"
               testid="pillars-get-started-button"
               onClick={() => scrollToSection("#contact")}
-              className="group inline-flex shrink-0 items-center gap-2 rounded-full bg-amber px-6 py-3 text-sm font-semibold text-deeper transition-colors duration-300 hover:bg-white"
+              className="group inline-flex shrink-0 items-center gap-2 rounded-full bg-amber px-6 py-3 text-sm font-bold text-navy transition-colors duration-300 hover:bg-navy hover:text-white"
             >
               Get Started
               <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -99,7 +99,7 @@ export default function Pillars() {
                   <h.icon className="h-5 w-5 text-sky" />
                   <h3 className="font-display text-2xl text-navy">{h.title}</h3>
                 </div>
-                <p className="mt-3 text-[15px] text-ink/65 leading-relaxed">{h.desc}</p>
+                <p className="mt-3 text-[15px] text-ink leading-relaxed">{h.desc}</p>
               </div>
             </Reveal>
           ))}

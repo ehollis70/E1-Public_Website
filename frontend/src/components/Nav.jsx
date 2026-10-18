@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Menu, X, ArrowRight } from "lucide-react";
+import { Menu, X, ArrowUpRight } from "lucide-react";
 import Logo from "./Logo";
 import { scrollToSection, Magnetic } from "./motion";
 
@@ -35,8 +35,8 @@ export default function Nav() {
         data-testid="site-nav"
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           scrolled
-            ? "bg-deep/85 backdrop-blur-xl border-b border-white/10 py-3"
-            : "bg-deep/40 backdrop-blur-md py-5"
+            ? "bg-white/85 backdrop-blur-xl border-b border-navy/10 shadow-[0_8px_30px_-18px_rgba(0,58,112,0.35)] py-2.5"
+            : "bg-white/55 backdrop-blur-md py-4"
         }`}
       >
         <div className="mx-auto max-w-7xl px-6 lg:px-10 flex items-center justify-between">
@@ -51,7 +51,7 @@ export default function Nav() {
                   e.preventDefault();
                   jump(l.target);
                 }}
-                className="link-draw text-[13.5px] font-medium tracking-[0.14em] uppercase text-white/75 hover:text-white transition-colors"
+                className="link-draw text-[13.5px] font-semibold tracking-[0.12em] uppercase text-navy/70 hover:text-navy transition-colors"
               >
                 {l.label}
               </a>
@@ -60,15 +60,15 @@ export default function Nav() {
               as="button"
               testid="nav-get-started-button"
               onClick={goContact}
-              className="group inline-flex items-center gap-2 rounded-full bg-amber px-6 py-2.5 text-[13.5px] font-semibold tracking-wide text-deeper transition-colors duration-300 hover:bg-white"
+              className="group inline-flex items-center gap-2 rounded-full bg-amber px-6 py-2.5 text-[13.5px] font-bold tracking-wide text-navy transition-colors duration-300 hover:bg-navy hover:text-white"
             >
               Get Started
-              <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+              <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </Magnetic>
           </nav>
           <button
             data-testid="nav-mobile-toggle"
-            className="lg:hidden text-white p-2"
+            className="lg:hidden text-navy p-2"
             onClick={() => setOpen(!open)}
             aria-label="Toggle menu"
           >
@@ -78,11 +78,11 @@ export default function Nav() {
       </header>
 
       <div
-        className={`fixed inset-0 z-40 bg-deep/97 backdrop-blur-2xl transition-all duration-500 lg:hidden ${
+        className={`fixed inset-0 z-40 bg-white/97 backdrop-blur-2xl transition-all duration-500 lg:hidden ${
           open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
       >
-        <div className="flex h-full flex-col justify-center gap-2 px-8">
+        <div className="flex h-full flex-col justify-center gap-1 px-8">
           {LINKS.map((l, i) => (
             <a
               key={l.label}
@@ -92,7 +92,7 @@ export default function Nav() {
                 e.preventDefault();
                 jump(l.target);
               }}
-              className={`font-display text-4xl text-white py-3 border-b border-white/10 transition-all duration-500 ${
+              className={`font-display text-4xl text-navy py-3 border-b border-navy/10 transition-all duration-500 ${
                 open ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
               }`}
               style={{ transitionDelay: `${i * 60}ms` }}
@@ -103,9 +103,9 @@ export default function Nav() {
           <button
             data-testid="nav-get-started-button-mobile"
             onClick={goContact}
-            className="mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-amber px-8 py-4 text-base font-semibold text-deeper"
+            className="mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-amber px-8 py-4 text-base font-bold text-navy"
           >
-            Get Started <ArrowRight className="h-5 w-5" />
+            Get Started <ArrowUpRight className="h-5 w-5" />
           </button>
         </div>
       </div>

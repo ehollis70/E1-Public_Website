@@ -11,23 +11,23 @@ export default function Story() {
     <section id="our-story" data-testid="story-section" className="relative bg-white py-24 lg:py-32 overflow-hidden">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
         <Reveal>
-          <p className="flex items-center gap-3 text-[12px] font-medium tracking-[0.28em] uppercase text-sky mb-6">
-            <span className="h-px w-10 bg-sky/70" /> Our Story
+          <p className="flex items-center gap-3 text-[12px] font-bold tracking-[0.26em] uppercase text-sky mb-6">
+            <span className="h-[3px] w-10 rounded-full bg-amber" /> Our Story
           </p>
         </Reveal>
 
         <div className="grid lg:grid-cols-12 gap-12 items-start">
           <div className="lg:col-span-7">
             <h2 className="font-display text-navy text-4xl sm:text-5xl lg:text-6xl leading-[1.02] tracking-tight">
-              <MaskedLinesInView lines={['"Do the right thing."', <em className="italic text-sky">Always.</em>]} />
+              <MaskedLinesInView lines={['"Do the right thing."', <em className="italic text-amber">Always.</em>]} />
             </h2>
             <Reveal delay={0.15}>
-              <p className="mt-8 text-lg text-ink/70 leading-relaxed font-light max-w-2xl">
+              <p className="mt-8 text-lg text-ink leading-relaxed font-light max-w-2xl">
                 At Employees First, this idea drives us forward. That's why we've taken a fresh look at employer-paid
                 and employee-paid benefits and are advancing new ways to help employers better support the well-being
                 of their workforce. Our innovative model gives employers unprecedented access to funds that can be
                 used to pay for benefits and services that strengthen employee health and satisfaction, without added
-                expense. <span className="text-navy font-medium">It's the right idea for everyone.</span>
+                expense. <span className="text-navy font-bold">It's the right idea for everyone.</span>
               </p>
             </Reveal>
 
@@ -54,8 +54,8 @@ export default function Story() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-navy/60 via-transparent to-transparent" />
                   <div className="absolute bottom-5 left-5 right-5">
-                    <p className="text-white font-display text-3xl leading-none">Amy Hollis</p>
-                    <p className="text-amber text-[12px] font-semibold tracking-[0.22em] uppercase mt-2">
+                    <p className="text-white font-display text-3xl leading-none drop-shadow">Amy Hollis</p>
+                    <p className="text-amber text-[12px] font-bold tracking-[0.2em] uppercase mt-2">
                       Founder & Chief Executive Officer
                     </p>
                   </div>
@@ -66,13 +66,13 @@ export default function Story() {
                     {FIRMS.map((f) => (
                       <span
                         key={f}
-                        className="inline-flex items-center gap-1.5 rounded-full bg-navy/5 border border-navy/10 px-3 py-1 text-[12px] font-medium text-navy"
+                        className="inline-flex items-center gap-1.5 rounded-full bg-white border border-navy/15 px-3 py-1 text-[12px] font-semibold text-navy"
                       >
-                        <Building2 className="h-3 w-3" /> {f}
+                        <Building2 className="h-3 w-3 text-sky" /> {f}
                       </span>
                     ))}
                   </div>
-                  <p className="mt-5 text-[15px] text-ink/70 leading-relaxed">
+                  <p className="mt-5 text-[15px] text-ink leading-relaxed">
                     With more than 20 years of benefits expertise, Hollis has created and led multiple highly
                     successful voluntary benefit practices for preeminent national consulting firms.
                   </p>
@@ -80,7 +80,7 @@ export default function Story() {
                     <Award className="h-8 w-8 text-amber shrink-0" />
                     <p className="text-[15px] text-navy leading-snug">
                       Over the last decade, engaged with{" "}
-                      <span className="font-semibold">nearly half of the Fortune 500</span> as lead strategist in
+                      <span className="font-bold">nearly half of the Fortune 500</span> as lead strategist in
                       voluntary benefit programs.
                     </p>
                   </div>

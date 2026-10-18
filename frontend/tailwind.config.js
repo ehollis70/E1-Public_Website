@@ -11,16 +11,22 @@ module.exports = {
     extend: {
       fontFamily: {
         display: ['"Cormorant Garamond"', 'Georgia', 'serif'],
-        sans: ['Outfit', 'sans-serif'],
+        sans: ['"Source Sans 3"', '"Source Sans Pro"', 'sans-serif'],
       },
       colors: {
         navy: '#003A70',
-        deep: '#04182E',
-        deeper: '#02101F',
+        deep: '#003A70',
+        deeper: '#00294E',
         sky: '#009ADE',
+        pale: '#96DAEA',
         amber: '#FF9E1B',
-        paper: '#F8F9FA',
-        ink: '#0B2545',
+        yellow: '#FFC72C',
+        green: '#C2D500',
+        tan: '#B39A80',
+        mist: '#D3D6CE',
+        sand: '#ECE9DF',
+        paper: '#F4F6F0',
+        ink: '#54575A',
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
         card: {

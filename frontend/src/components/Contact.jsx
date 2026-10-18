@@ -1,6 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
-import { ArrowRight, CheckCircle2, Loader2 } from "lucide-react";
+import { ArrowUpRight, CheckCircle2, Loader2 } from "lucide-react";
 import { Reveal, MaskedLinesInView, Magnetic } from "./motion";
 
 const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
@@ -30,20 +30,20 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" data-testid="contact-section" className="relative bg-deeper grain overflow-hidden">
-      <div className="pointer-events-none absolute top-[-20%] left-[30%] h-[500px] w-[500px] rounded-full bg-sky/10 blur-[140px]" />
+    <section id="contact" data-testid="contact-section" className="relative bg-white overflow-hidden">
+      <div className="pointer-events-none absolute top-[-20%] left-[55%] h-[460px] w-[460px] rounded-full bg-pale/30 blur-[130px]" />
       <div className="relative mx-auto max-w-7xl px-6 lg:px-10 py-24 lg:py-32 grid lg:grid-cols-12 gap-14">
         <div className="lg:col-span-5">
           <Reveal>
-            <p className="flex items-center gap-3 text-[12px] font-medium tracking-[0.28em] uppercase text-sky mb-6">
-              <span className="h-px w-10 bg-sky/70" /> Contact
+            <p className="flex items-center gap-3 text-[12px] font-bold tracking-[0.26em] uppercase text-sky mb-6">
+              <span className="h-[3px] w-10 rounded-full bg-amber" /> Contact
             </p>
           </Reveal>
-          <h2 className="font-display text-white text-4xl sm:text-5xl lg:text-6xl leading-[1.02] tracking-tight">
+          <h2 className="font-display text-navy text-4xl sm:text-5xl lg:text-6xl leading-[1.02] tracking-tight">
             <MaskedLinesInView lines={["Let's Start a", <em className="italic text-amber">Conversation</em>]} />
           </h2>
           <Reveal delay={0.15}>
-            <p className="mt-8 max-w-md text-lg text-white/60 font-light leading-relaxed">
+            <p className="mt-8 max-w-md text-lg text-ink font-light leading-relaxed">
               Together, we can make sure you are always putting your Employees First. Tell us a little about your
               benefits program and we'll take it from there.
             </p>
@@ -55,11 +55,11 @@ export default function Contact() {
             <Reveal>
               <div
                 data-testid="contact-success"
-                className="h-full min-h-[380px] flex flex-col items-center justify-center text-center rounded-2xl border border-sky/30 bg-sky/5 p-10"
+                className="h-full min-h-[380px] flex flex-col items-center justify-center text-center rounded-2xl bg-paper border border-green/40 p-10"
               >
-                <CheckCircle2 className="h-14 w-14 text-sky" />
-                <h3 className="mt-6 font-display text-3xl text-white">Thank you — message received.</h3>
-                <p className="mt-3 max-w-sm text-white/60">
+                <CheckCircle2 className="h-14 w-14 text-green" />
+                <h3 className="mt-6 font-display text-3xl text-navy">Thank you — message received.</h3>
+                <p className="mt-3 max-w-sm text-ink">
                   We'll be in touch shortly to start the conversation about your voluntary benefits.
                 </p>
               </div>
@@ -69,11 +69,11 @@ export default function Contact() {
               <form
                 onSubmit={submit}
                 data-testid="contact-form"
-                className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl p-8 lg:p-10 space-y-5"
+                className="rounded-2xl bg-paper border border-navy/10 p-8 lg:p-10 space-y-5 shadow-[0_30px_60px_-40px_rgba(0,58,112,0.4)]"
               >
                 <div className="grid sm:grid-cols-2 gap-5">
                   <div>
-                    <label htmlFor="cf-name" className="block text-[12px] font-semibold tracking-[0.18em] uppercase text-white/50 mb-2">
+                    <label htmlFor="cf-name" className="block text-[12px] font-bold tracking-[0.16em] uppercase text-navy mb-2">
                       Name *
                     </label>
                     <input
@@ -86,7 +86,7 @@ export default function Contact() {
                     />
                   </div>
                   <div>
-                    <label htmlFor="cf-email" className="block text-[12px] font-semibold tracking-[0.18em] uppercase text-white/50 mb-2">
+                    <label htmlFor="cf-email" className="block text-[12px] font-bold tracking-[0.16em] uppercase text-navy mb-2">
                       Email *
                     </label>
                     <input
@@ -101,7 +101,7 @@ export default function Contact() {
                   </div>
                 </div>
                 <div>
-                  <label htmlFor="cf-company" className="block text-[12px] font-semibold tracking-[0.18em] uppercase text-white/50 mb-2">
+                  <label htmlFor="cf-company" className="block text-[12px] font-bold tracking-[0.16em] uppercase text-navy mb-2">
                     Company
                   </label>
                   <input
@@ -114,7 +114,7 @@ export default function Contact() {
                   />
                 </div>
                 <div>
-                  <label htmlFor="cf-message" className="block text-[12px] font-semibold tracking-[0.18em] uppercase text-white/50 mb-2">
+                  <label htmlFor="cf-message" className="block text-[12px] font-bold tracking-[0.16em] uppercase text-navy mb-2">
                     Message *
                   </label>
                   <textarea
@@ -128,7 +128,7 @@ export default function Contact() {
                   />
                 </div>
                 {error && (
-                  <p data-testid="contact-error" className="text-amber text-sm">
+                  <p data-testid="contact-error" className="text-amber font-semibold text-sm">
                     {error}
                   </p>
                 )}
@@ -136,7 +136,7 @@ export default function Contact() {
                   as="button"
                   type="submit"
                   testid="contact-submit-button"
-                  className="group inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-full bg-amber px-10 py-4 text-[15px] font-semibold text-deeper transition-colors duration-300 hover:bg-white disabled:opacity-60"
+                  className="group inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-full bg-amber px-10 py-4 text-[15px] font-bold text-navy shadow-[0_14px_30px_-12px_rgba(255,158,27,0.65)] transition-colors duration-300 hover:bg-navy hover:text-white disabled:opacity-60"
                   strength={0.15}
                 >
                   {status === "sending" ? (
@@ -146,7 +146,7 @@ export default function Contact() {
                   ) : (
                     <>
                       Send Message
-                      <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                      <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                     </>
                   )}
                 </Magnetic>

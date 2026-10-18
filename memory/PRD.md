@@ -27,8 +27,9 @@
 11. Contact: "Let's Start a Conversation" working form → MongoDB, success confirmation
 12. Footer: site anchors + Blog/Podcast links to original site + copyright
 
-## Implemented (2026-10-18)
-- Full Phase 1 as approved. Backend contact API verified with curl (create + list). Form submit → success state verified in preview. Desktop (1440) and mobile (390) screenshot passes clean, no horizontal overflow.
+## Implemented
+- 2026-10-18: Full Phase 1 recreation. Backend contact API verified with curl (create + list). Form submit → success state verified in preview. Desktop and mobile screenshot passes clean.
+- 2026-10-18: **Brand-faithful re-skin (approved plan):** real brand assets processed to transparent PNGs (primary wordmark on light surfaces, reverse light-blue/orange variant on navy bands, E-icon as favicon + small-format mark); fonts swapped to Source Sans 3 body + Cormorant Garamond display; body grey #54575A; hybrid theme — bright hero and light sections (white/paper/sand), deep navy reserved for the 25% stat band, marquee, and footer; orange arrow motif system (CTA arrows, list tick arrows, marquee separators, ghost arrow behind 25% stat); dark money-light photo retired; re-verified desktop + mobile (no overflow) and contact form submit end-to-end on mobile.
 
 ## Backlog
 - **P1:** Embed the real 60-second program video when file/URL supplied (poster card is a placeholder).
