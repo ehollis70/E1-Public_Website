@@ -38,6 +38,7 @@
 - **P2:** SEO/sitemap/social-card polish, analytics.
   - SEO/sitemap/social-card polish: DONE 2026-10-18 (head overhaul, og-image 1200×630, JSON-LD Organization + founder Person, noscript fallback, robots.txt, sitemap.xml, llms.txt, apple-touch-icon, hygiene audit — all verified in preview; live effect requires redeploy + search-crawling toggle + GSC submission).
   - FAQ section with matching FAQPage structured data: DONE 2026-10-18 (6 Q&As composed only from existing on-page claims, accordion UI, FAQPage JSON-LD verified to match on-page text exactly; section placed between Our Team and the marquee; llms.txt updated).
+- 2026-10-18: **Trust badge strip in the footer (approved plan):** four badges in white chips at the top of the navy footer — uploaded WBENC Women-Owned logo (unlinked, as on the original), HR Tech Outlook 2025 award badge (→ hrtechoutlook.com), AICPA SOC badge (→ aicpa.org/soc4so, https upgrade), and the company's real HIPAA COMPLIANT / HIPAA<Training.com seal fetched from the live site (→ hipaatraining.com). Verbatim captions, descriptive alt text, lazy-loaded, staggered reveal, hover lift with amber ring; 4-across desktop, 2x2 tablet/mobile. Badge artwork verified visually (first fetched Wix image was a mislabeled headshot — caught and replaced with the true seal). 4/4 badge assets serve with correct content-types; no overflow on any breakpoint.
 - **P2:** Custom 404 + og-image assets.
 
 ## Notes
