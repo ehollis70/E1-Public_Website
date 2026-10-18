@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Menu, X, ArrowUpRight } from "lucide-react";
+import { Menu, X, ArrowUpRight, ExternalLink } from "lucide-react";
 import Logo from "./Logo";
 import { scrollToSection, Magnetic } from "./motion";
 
@@ -10,6 +10,8 @@ const LINKS = [
   { label: "Our Team", target: "#our-team", testid: "nav-our-team" },
   { label: "Contact", target: "#contact", testid: "nav-contact" },
 ];
+
+const PORTAL_URL = "https://portal.myemployeesfirst.com";
 
 export const goContact = () => scrollToSection("#contact");
 
@@ -56,6 +58,16 @@ export default function Nav() {
                 {l.label}
               </a>
             ))}
+            <a
+              href={PORTAL_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              data-testid="nav-portal-link"
+              className="group inline-flex items-center gap-1.5 text-[13.5px] font-semibold tracking-[0.12em] uppercase text-navy/70 hover:text-navy transition-colors"
+            >
+              Customer Portal
+              <ExternalLink className="h-3.5 w-3.5 text-sky transition-colors group-hover:text-amber" />
+            </a>
             <Magnetic
               as="button"
               testid="nav-get-started-button"
@@ -100,6 +112,19 @@ export default function Nav() {
               {l.label}
             </a>
           ))}
+          <a
+            href={PORTAL_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            data-testid="nav-portal-link-mobile"
+            className={`inline-flex items-center gap-3 py-4 border-b border-navy/10 transition-all duration-500 ${
+              open ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
+            }`}
+            style={{ transitionDelay: `${LINKS.length * 60}ms` }}
+          >
+            <span className="font-display text-4xl text-sky">Customer Portal</span>
+            <ExternalLink className="h-6 w-6 text-sky" />
+          </a>
           <button
             data-testid="nav-get-started-button-mobile"
             onClick={goContact}
