@@ -1,38 +1,40 @@
-# Trust Badge Strip in the Footer
+# Employees First — Growth Recommendations Build: Compare Page, Case-Study Template, Estimator CTA, HubSpot Form & Legal-Safe Messaging
 
-Recreate the certification-and-awards row from the footer of myemployeesfirst.com inside this app's navy footer: the three uploaded logos plus the company's existing HIPAA seal, each in a clean white chip with the original captions and links, with the same restrained motion craft as the rest of the page.
+The site grows from one page into a small conversion machine built around the strategy document you supplied: a dedicated comparison page (/compare) with clearly-labeled "Confirm" placeholders where facts are missing, a case-study template wired to a database but publishing nothing until you approve real data, the savings calculator promoted to the site's main call-to-action (your existing Calconic calculator, embedded), your real HubSpot form replacing the temporary contact form so leads land in your CRM, legal-safer language replacing "ERISA-compliant" everywhere, and the trust badge strip moved up out of the footer into a prominent position. Plus the badge chips you flagged get smaller icons.
 
 ## Who it's for
-- Employers, brokers, and consultants evaluating the company at the footer of the page — the moment where credentials close the deal.
-- Anyone pasting or sharing the site who wants visible proof of certification (women-owned, award-winning, SOC-audited, HIPAA-trained).
+- CFO, HR, and Total Rewards leaders comparing ways to fund Accident, Hospital Indemnity and Critical Illness — and wanting to estimate savings before talking to anyone.
+- Brokers and consultants vetting the model, and the company's own team who need the site to be defensible in a post-litigation ERISA climate.
 
 ## Core features and experience
-1. **New "Certifications & Awards" strip** at the top of the navy footer, above the existing site-map columns: four badges in one row, exactly matching the original site's footer arrangement.
-2. **The four badges:**
-   - Women's Business Enterprise — the uploaded "WOB Certified WBENC" logo (color version)
-   - "Top Voluntary Employees Benefit Service 2025" award — the uploaded HR Tech Outlook badge
-   - AICPA SOC for Service Organizations — the uploaded SOC NonCPA badge
-   - HIPAA — the same "HIPAA COMPLIANT — Training.com" seal the company's live site already displays (confirmed choice; no new compliance claim invented)
-3. **White chips on navy** — each logo sits in a white, softly rounded card so the uploaded artwork (which has baked-in white/black backgrounds) renders cleanly without recoloring, cropping, or distorting it; clear space respected.
-4. **Original captions, verbatim** under each badge: "certified by Women's Business Enterprise National Council", "award from HR Tech Outlook", "certified by AICPA SOC", "HIPAA compliance".
-5. **Links as on the original site**, opening in a new tab safely: award badge → HR Tech Outlook magazine page; AICPA SOC → aicpa.org/soc4so; HIPAA seal → hipaatraining.com; the WBE badge stays unlinked exactly as on the original.
-6. **Motion to match the page** — staggered scroll-reveal of the four chips, gentle lift with an amber ring on hover; logos lazy-loaded.
-7. **Hygiene** — descriptive alt text on every badge, real anchor links, responsive: four across on desktop, two-by-two on tablet and mobile, no overflow.
+1. **Badge chips fixed** — logos capped at a smaller height inside the chips (roughly half the current visual weight), captions and links unchanged; also applies to the strip's new location.
+2. **Trust strip moves up** — the Certifications & Awards row (WBENC, HR Tech Outlook award, AICPA SOC, HIPAA seal) leaves the footer and becomes a compact band directly under the hero, on the light ground, four-across desktop / two-by-two mobile; footer keeps its logo, site map and copyright.
+3. **Comparison page at /compare** — new dedicated page using the document's own draft: hero ("Three ways to fund Accident, Hospital Indemnity and Critical Illness. Only one shows you every dollar."), the at-a-glance table (Traditional carrier vs Group captive vs Employees First), the "Why employers choose" block, the "Is a group captive still right for you?" section, an FAQ, and a closing CTA to the estimator. Cells the document marks unconfirmed ("works with current carrier?", "minimum size", FAQ answers on captives, employee impact, implementation time, cost) render as clearly-labeled "Confirm" placeholders — visible, honest, impossible to mistake for published claims. Competitor claims stay generic; the unsourced visibility row is softened per the document.
+4. **Case-study template, data-driven** — the document's exact structure (client snapshot, three headline numbers, challenge, what we found, what changed, client quote, before/after table, CTA) built as a template page that reads from a new database collection, with a matching "Case Studies" strip on the landing page that only appears once at least one approved case is published. Nothing fabricated ships; the landing page shows no case-study section until real, approved data exists.
+5. **Estimator becomes the main CTA** — a new "Estimate Your Savings" section on the landing page embedding your existing Calconic calculator (same calculator ID, embedded with its official script), and every "Get Started" button across the site now jumps to it; "Talk to us" secondary CTAs go to the contact section.
+6. **HubSpot form replaces the temporary form** — the contact section embeds your real HubSpot form (portal 20497746, the form ID you provided) via the official embed script, so submissions flow into your HubSpot CRM with no manual step; a fallback link to the form's share URL covers no-JS visitors. The internal save-to-database endpoint stays in place but the page no longer depends on it.
+7. **Legal-safer messaging site-wide** — "ERISA-compliant financial model" is replaced with process language ("a financial model built to support a documented, prudent fiduciary process") everywhere it appears: hero strip, pillars, how-it-works, FAQ, meta description, noscript, JSON-LD, llms.txt. Neutral reinvestment wording already on the page stays; nothing implying past commissions were excessive.
+8. **Standard disclaimers** — a small-print line in the footer: not legal or tax advice, consult ERISA counsel, savings figures are historical and not guaranteed.
+9. **Search polish** — page title and meta description sharpened toward the document's pattern (front-loaded "Voluntary Benefits…"), category terms (group captive, voluntary benefits captive, supplemental benefits, loss ratio) woven into the comparison page copy, FAQ answer, llms.txt and meta; a one-line who-it's-for statement added to the hero; final alt-text and image-weight pass; per-route titles for the new pages.
 
 ## User flow
-A visitor scrolls to the navy footer and sees the trust strip directly beneath the reverse logo and tagline → each badge lifts gently under the cursor with an amber ring → clicking the award, SOC, or HIPAA badge opens the certifier's page in a new tab. Nothing above the footer changes.
+Land → bright hero states the promise and $44M proof → the trust strip (certifications and award) lands immediately → pillars and the 25% stat → "Get Started" now leads to the estimator with your real calculator → compare section invites the skeptical to /compare → comparison page lays the three models side by side, answers what's answerable, marks the rest "Confirm" → contact section shows the real HubSpot form → submission lands in HubSpot. Case studies appear automatically once the first approved study is added.
 
 ## UI/UX feel
-Quiet confidence: a generous, evenly spaced row of white chips carrying real credentials on the deep navy ground — the same bright-on-navy restraint the page already uses, with one small hover flourish. No new art direction; the existing design stays untouched.
+Same "Forward, First" art direction throughout: bright paper grounds, navy serif headlines, orange arrow motif, premium motion. The comparison table is the new hero piece — an aligned three-column grid with the Employees First column visually elevated (navy header, amber edge, subtle shadow), scrolling to a clean stacked layout on mobile. The estimator sits in a quiet white section that lets the calculator widget breathe. The trust strip under the hero shrinks the existing white-chip treatment into a slimmer band.
 
 ## Implementation phases
-- **Phase 1 — MVP (built now):** prepare the three uploaded logos and fetch the company's HIPAA seal from its own live site; build the footer strip with chips, captions, links, alt text, and reveal/hover motion; verify on desktop and mobile.
-- **Phase 2:** link the WBE badge to the company's WBENC certification page once its certifying details are confirmed; optionally echo a compact version of the strip beside the contact form or in Our Story.
-- **Phase 3:** compress badges to lighter modern formats and add awards to structured data once confirmed.
+- **Phase 1 — MVP (built now):** badge chip size fix; trust strip relocated under the hero; ERISA wording replaced site-wide; /compare page (with "Confirm" placeholders) added to the router and nav; case-study template system (database collection, template page, conditional landing strip — zero published cases); Calconic estimator section as the new main CTA with all buttons rewired; HubSpot form embedded in the contact section; disclaimers; title/meta/keyword polish; per-route titles; verified end-to-end on desktop and mobile.
+- **Phase 2:** you supply the comparison-page facts (carrier compatibility, minimum size, FAQ answers) and the placeholders get replaced; first real case study added with written client approval; estimator methodology documented on the page; WBENC badge linked; analytics goals wired to the estimator and form.
+- **Phase 3:** CFO/General Counsel page (Form 5500 angle), Voluntary Benefits Fiduciary Checklist lead magnet, industry pages (healthcare, higher ed, public sector, manufacturing), persona paths for CFOs/HR/brokers, podcast transcriptions as blog posts, and the off-Wix migration conversation.
 
 ## Assumptions
-- The HIPAA badge is the company's existing "HIPAA COMPLIANT — Training.com" seal, taken verbatim from its live site footer and linked to hipaatraining.com there too — the user confirmed this choice; no official government HIPAA logo exists and none is implied beyond what the company already displays.
-- The three uploaded files are the canonical artwork; the Wix-hosted copies on the original site are ignored.
-- White chip cards are the display treatment chosen to keep uploaded white/black-background artwork intact on the navy footer; the brand rule "never recolor the logo" governs.
-- Captions and destinations are copied verbatim from the original site's footer; the AICPA link is upgraded to https.
-- The strip appears only in the footer; every other section of the page remains exactly as approved.
+- "Yes, case study template" is read as: build the full template system now, publish nothing until you add approved client data — the landing page simply shows no case-study section until then.
+- The Calconic calculator is embedded exactly as provided (same calculator ID); its math stays yours — the site adds no numbers of its own.
+- The HubSpot embed replaces the local contact form in the UI; the existing database endpoint remains functional but unused by the page. A no-JS fallback links to the HubSpot share URL.
+- ERISA wording replacement is literal where the phrase appears, adapted per sentence so the copy still reads naturally.
+- "Confirm" placeholders on /compare are styled as honest, visible markers (amber outline chips) — not hidden — so nothing unconfirmed ever reads as a published claim.
+- The comparison page uses the document's generic competitor descriptions only; no unsourced visibility claims, no case-status or litigation commentary on the site.
+- The trust strip moves entirely out of the footer (your "move the strip up and out of the footer"), leaving the footer as logo, site map, links, disclaimers, copyright.
+- Nav gains one item ("Compare"); everything else in the nav stays as approved.
+- The current $44M and 25% claims stay on the page as historical company-reported figures, now covered by the disclaimer line.
