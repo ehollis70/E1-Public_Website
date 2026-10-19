@@ -119,21 +119,34 @@ textarea {
   outline: none;
 }
 
-.field {
-  width: 100%;
-  background: #ffffff;
-  border: 1px solid rgba(0, 58, 112, 0.18);
-  border-radius: 2px;
-  padding: 14px 16px;
-  color: #0b2540;
-  font-size: 15px;
-  font-family: "Source Sans 3", sans-serif;
-  transition: border-color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+/* number inputs: hide spinners so custom % suffix has room */
+.field[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
 }
-.field::placeholder {
-  color: rgba(84, 87, 90, 0.45);
+.field[type="number"]::-webkit-outer-spin-button,
+.field[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
-.field:focus {
-  border-color: var(--sky);
-  box-shadow: 0 0 0 3px rgba(0, 154, 222, 0.14);
+
+@layer components {
+  .field {
+    width: 100%;
+    background: #ffffff;
+    border: 1px solid rgba(0, 58, 112, 0.18);
+    border-radius: 2px;
+    padding: 14px 16px;
+    color: #0b2540;
+    font-size: 15px;
+    font-family: "Source Sans 3", sans-serif;
+    transition: border-color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  .field::placeholder {
+    color: rgba(84, 87, 90, 0.45);
+  }
+  .field:focus {
+    border-color: var(--sky);
+    box-shadow: 0 0 0 3px rgba(0, 154, 222, 0.14);
+  }
 }

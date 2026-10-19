@@ -42,7 +42,11 @@ function Field({ label, testid, value, onChange, prefix, suffix, min = 0, step =
     <div>
       <label className="block text-[12px] font-bold tracking-[0.16em] uppercase text-navy mb-2">{label}</label>
       <div className="relative">
-        {prefix && <span className="absolute left-4 top-1/2 -translate-y-1/2 text-navy/50 font-semibold">{prefix}</span>}
+        {prefix && (
+          <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-navy/50 font-semibold pointer-events-none" aria-hidden="true">
+            {prefix}
+          </span>
+        )}
         <input
           type="number"
           min={min}
@@ -50,10 +54,12 @@ function Field({ label, testid, value, onChange, prefix, suffix, min = 0, step =
           data-testid={testid}
           value={value}
           onChange={(e) => onChange(e.target.value === "" ? 0 : Number(e.target.value))}
-          className={`field ${prefix ? "pl-8" : ""} ${suffix ? "pr-12" : ""}`}
+          className={`field ${prefix ? "pl-9" : ""} ${suffix ? "pr-11" : ""}`}
         />
         {suffix && (
-          <span className="absolute right-4 top-1/2 -translate-y-1/2 text-navy/50 font-semibold">%</span>
+          <span className="absolute right-3.5 top-1/2 -translate-y-1/2 text-navy/50 font-semibold pointer-events-none" aria-hidden="true">
+            %
+          </span>
         )}
       </div>
     </div>
