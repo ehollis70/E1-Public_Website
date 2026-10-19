@@ -4,7 +4,7 @@ import { Reveal, MaskedLinesInView } from "./motion";
 const FAQS = [
   {
     q: "What is Employees First?",
-    a: "Employees First is an ERISA-compliant financial model that creates full transparency, giving employers visibility and control of Accident, Hospital Indemnity, and Critical Illness policies. We make the invisible, visible.",
+    a: "Employees First uses a financial model built to support a documented, prudent fiduciary process. It creates full transparency, giving employers visibility and control of Accident, Hospital Indemnity, and Critical Illness policies. We make the invisible, visible.",
   },
   {
     q: "How does the program work?",

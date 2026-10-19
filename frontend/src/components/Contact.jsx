@@ -1,14 +1,36 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
-import { ArrowUpRight, CheckCircle2, Loader2 } from "lucide-react";
+import { ArrowUpRight, CheckCircle2, Loader2, ExternalLink } from "lucide-react";
 import { Reveal, MaskedLinesInView, Magnetic } from "./motion";
+import { HUBSPOT_PORTAL_ID, HUBSPOT_FORM_ID } from "@/config";
 
 const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
+const hubspotOn = Boolean(HUBSPOT_FORM_ID);
 
 export default function Contact() {
   const [form, setForm] = useState({ name: "", email: "", company: "", message: "" });
   const [status, setStatus] = useState("idle");
   const [error, setError] = useState("");
+
+  useEffect(() => {
+    if (!hubspotOn) return;
+    const s = document.createElement("script");
+    s.src = "https://js.hsforms.net/forms/embed/v3.js";
+    s.async = true;
+    s.onload = () => {
+      if (window.hbspt) {
+        window.hbspt.forms.create({
+          portalId: HUBSPOT_PORTAL_ID,
+          formId: HUBSPOT_FORM_ID,
+          target: "#hubspot-form",
+        });
+      }
+    };
+    document.body.appendChild(s);
+    return () => {
+      s.remove();
+    };
+  }, []);
 
   const set = (k) => (e) => setForm({ ...form, [k]: e.target.value });
 
@@ -51,7 +73,29 @@ export default function Contact() {
         </div>
 
         <div className="lg:col-span-7">
-          {status === "success" ? (
+          {hubspotOn ? (
+            <Reveal delay={0.1}>
+              <div
+                data-testid="hubspot-form"
+                className="rounded-2xl bg-paper border border-navy/10 p-6 lg:p-8 shadow-[0_30px_60px_-40px_rgba(0,58,112,0.4)] min-h-[380px]"
+              >
+                <div id="hubspot-form" />
+                <noscript>
+                  <p className="text-ink text-sm">
+                    JavaScript is off, so the form can't load here.{" "}
+                    <a
+                      href="https://www.myemployeesfirst.com/contact"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline text-navy"
+                    >
+                      Use our form on myemployeesfirst.com <ExternalLink className="inline h-3 w-3" />
+                    </a>
+                  </p>
+                </noscript>
+              </div>
+            </Reveal>
+          ) : status === "success" ? (
             <Reveal>
               <div
                 data-testid="contact-success"

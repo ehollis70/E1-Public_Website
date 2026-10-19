@@ -48,8 +48,9 @@ export default function Pillars() {
           <div className="lg:col-span-5">
             <Reveal delay={0.15}>
               <p className="text-lg text-ink leading-relaxed font-light">
-                The Employees First ERISA-compliant financial model creates full transparency to give employers
-                visibility and control of Accident, Hospital Indemnity, and Critical Illness policies.
+                The Employees First financial model — built to support a documented, prudent fiduciary process —
+                creates full transparency to give employers visibility and control of Accident, Hospital
+                Indemnity, and Critical Illness policies.
                 <span className="text-navy font-bold"> What you'll see:</span>
               </p>
             </Reveal>
@@ -82,7 +83,7 @@ export default function Pillars() {
             <Magnetic
               as="button"
               testid="pillars-get-started-button"
-              onClick={() => scrollToSection("#contact")}
+              onClick={() => scrollToSection("#estimator")}
               className="group inline-flex shrink-0 items-center gap-2 rounded-full bg-amber px-6 py-3 text-sm font-bold text-navy transition-colors duration-300 hover:bg-navy hover:text-white"
             >
               Get Started

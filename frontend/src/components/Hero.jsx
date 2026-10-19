@@ -42,16 +42,26 @@ export default function Hero() {
             Since 2023, we've unlocked over{" "}
             <span className="text-navy font-bold">$44,000,000</span> for employee benefit reinvestment.
           </motion.p>
+          <motion.p
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.95, duration: 0.8 }}
+            className="mt-4 max-w-xl text-[14px] text-ink/70 font-medium"
+            data-testid="hero-who-for"
+          >
+            Built for CFO, HR, and Total Rewards leaders funding Accident, Hospital Indemnity, and Critical
+            Illness.
+          </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.0, duration: 0.8 }}
+            transition={{ delay: 1.05, duration: 0.8 }}
             className="mt-10 flex flex-wrap items-center gap-4"
           >
             <Magnetic
               as="button"
               testid="hero-get-started-button"
-              onClick={() => scrollToSection("#contact")}
+              onClick={() => scrollToSection("#estimator")}
               className="group inline-flex items-center gap-2 rounded-full bg-amber px-8 py-4 text-[15px] font-bold text-navy shadow-[0_14px_30px_-12px_rgba(255,158,27,0.65)] transition-colors duration-300 hover:bg-navy hover:text-white"
             >
               Get Started
@@ -109,7 +119,7 @@ export default function Hero() {
           <span className="h-1.5 w-1.5 rounded-full bg-amber" />
           <span>Critical Illness</span>
           <span className="hidden sm:inline text-ink/50 normal-case tracking-normal font-normal ml-auto">
-            The Employees First ERISA-compliant financial model
+            The Employees First financial model, built to support a documented, prudent fiduciary process
           </span>
         </div>
       </div>

@@ -10,7 +10,7 @@ const STEPS = [
   {
     n: "02",
     title: "Identify the hidden dollars",
-    desc: "We apply our ERISA-compliant financial model to identify premium dollars that remain after claims and capped fees. We don't sell insurance or administer services.",
+    desc: "We apply our financial model — built to support a documented, prudent fiduciary process — to identify premium dollars that remain after claims and capped fees. We don't sell insurance or administer services.",
   },
   {
     n: "03",
@@ -147,7 +147,7 @@ export default function HowItWorks() {
                 <Magnetic
                   as="button"
                   testid="how-get-started-button"
-                  onClick={() => scrollToSection("#contact")}
+                  onClick={() => scrollToSection("#estimator")}
                   className="group inline-flex shrink-0 items-center gap-2 rounded-full bg-navy px-6 py-3 text-sm font-bold text-white transition-colors duration-300 hover:bg-sky"
                 >
                   Get Started

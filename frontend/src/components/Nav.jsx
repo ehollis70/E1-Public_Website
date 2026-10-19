@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { Menu, X, ArrowUpRight, ExternalLink } from "lucide-react";
 import Logo from "./Logo";
-import { scrollToSection, Magnetic } from "./motion";
+import { useGoTo } from "@/utils/navigation";
+import { Magnetic } from "./motion";
 
 const LINKS = [
   { label: "How It Works", target: "#how-it-works", testid: "nav-how-it-works" },
@@ -13,11 +15,10 @@ const LINKS = [
 
 const PORTAL_URL = "https://portal.myemployeesfirst.com";
 
-export const goContact = () => scrollToSection("#contact");
-
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const goTo = useGoTo();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 32);
@@ -28,8 +29,11 @@ export default function Nav() {
 
   const jump = (target) => {
     setOpen(false);
-    setTimeout(() => scrollToSection(target), open ? 250 : 0);
+    setTimeout(() => goTo(target), open ? 250 : 0);
   };
+
+  const navLinkClass =
+    "link-draw text-[12.5px] font-semibold tracking-[0.1em] uppercase text-navy/70 hover:text-navy transition-colors";
 
   return (
     <>
@@ -41,9 +45,9 @@ export default function Nav() {
             : "bg-white/55 backdrop-blur-md py-4"
         }`}
       >
-        <div className="mx-auto max-w-7xl px-6 lg:px-10 flex items-center justify-between">
+        <div className="mx-auto max-w-7xl px-6 lg:px-10 flex items-center justify-between gap-4">
           <Logo />
-          <nav className="hidden lg:flex items-center gap-8">
+          <nav className="hidden lg:flex items-center gap-5 xl:gap-6">
             {LINKS.map((l) => (
               <a
                 key={l.label}
@@ -53,17 +57,24 @@ export default function Nav() {
                   e.preventDefault();
                   jump(l.target);
                 }}
-                className="link-draw text-[13.5px] font-semibold tracking-[0.12em] uppercase text-navy/70 hover:text-navy transition-colors"
+                className={`${navLinkClass} whitespace-nowrap`}
               >
                 {l.label}
               </a>
             ))}
+            <Link
+              to="/compare"
+              data-testid="nav-compare"
+              className={`${navLinkClass} whitespace-nowrap text-navy font-bold`}
+            >
+              Compare
+            </Link>
             <a
               href={PORTAL_URL}
               target="_blank"
               rel="noopener noreferrer"
               data-testid="nav-portal-link"
-              className="group inline-flex items-center gap-1.5 text-[13.5px] font-semibold tracking-[0.12em] uppercase text-navy/70 hover:text-navy transition-colors"
+              className="group inline-flex items-center gap-1.5 whitespace-nowrap text-[13px] font-semibold tracking-[0.1em] uppercase text-navy/70 hover:text-navy transition-colors"
             >
               Customer Portal
               <ExternalLink className="h-3.5 w-3.5 text-sky transition-colors group-hover:text-amber" />
@@ -71,8 +82,8 @@ export default function Nav() {
             <Magnetic
               as="button"
               testid="nav-get-started-button"
-              onClick={goContact}
-              className="group inline-flex items-center gap-2 rounded-full bg-amber px-6 py-2.5 text-[13.5px] font-bold tracking-wide text-navy transition-colors duration-300 hover:bg-navy hover:text-white"
+              onClick={() => jump("#estimator")}
+              className="group inline-flex whitespace-nowrap items-center gap-2 rounded-full bg-amber px-5 py-2.5 text-[13px] font-bold tracking-wide text-navy transition-colors duration-300 hover:bg-navy hover:text-white"
             >
               Get Started
               <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -94,7 +105,7 @@ export default function Nav() {
           open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
       >
-        <div className="flex h-full flex-col justify-center gap-1 px-8">
+        <div className="flex h-full flex-col justify-center gap-1 px-8 overflow-y-auto">
           {LINKS.map((l, i) => (
             <a
               key={l.label}
@@ -112,6 +123,17 @@ export default function Nav() {
               {l.label}
             </a>
           ))}
+          <Link
+            to="/compare"
+            data-testid="nav-compare-mobile"
+            onClick={() => setOpen(false)}
+            className={`font-display text-4xl text-navy font-bold py-3 border-b border-navy/10 transition-all duration-500 ${
+              open ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
+            }`}
+            style={{ transitionDelay: `${LINKS.length * 60}ms` }}
+          >
+            Compare
+          </Link>
           <a
             href={PORTAL_URL}
             target="_blank"
@@ -120,15 +142,15 @@ export default function Nav() {
             className={`inline-flex items-center gap-3 py-4 border-b border-navy/10 transition-all duration-500 ${
               open ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
             }`}
-            style={{ transitionDelay: `${LINKS.length * 60}ms` }}
+            style={{ transitionDelay: `${(LINKS.length + 1) * 60}ms` }}
           >
             <span className="font-display text-4xl text-sky">Customer Portal</span>
             <ExternalLink className="h-6 w-6 text-sky" />
           </a>
           <button
             data-testid="nav-get-started-button-mobile"
-            onClick={goContact}
-            className="mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-amber px-8 py-4 text-base font-bold text-navy"
+            onClick={() => jump("#estimator")}
+            className="mt-8 mb-6 inline-flex items-center justify-center gap-2 rounded-full bg-amber px-8 py-4 text-base font-bold text-navy"
           >
             Get Started <ArrowUpRight className="h-5 w-5" />
           </button>

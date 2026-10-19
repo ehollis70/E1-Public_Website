@@ -74,7 +74,7 @@ export default function Services() {
           <div className="mt-14 flex justify-center">
             <button
               data-testid="services-get-started-button"
-              onClick={() => scrollToSection("#contact")}
+              onClick={() => scrollToSection("#estimator")}
               className="group inline-flex items-center gap-2 rounded-full border border-navy/25 px-8 py-4 text-[15px] font-semibold text-navy transition-all duration-300 hover:bg-amber hover:border-amber"
             >
               Get Started
