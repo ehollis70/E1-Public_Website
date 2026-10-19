@@ -1,40 +1,44 @@
-# Employees First — Growth Recommendations Build: Compare Page, Case-Study Template, Estimator CTA, HubSpot Form & Legal-Safe Messaging
+# Employees First — Native Savings Estimator (rebuilding the Calconic calculator in-app, math from your workbook)
 
-The site grows from one page into a small conversion machine built around the strategy document you supplied: a dedicated comparison page (/compare) with clearly-labeled "Confirm" placeholders where facts are missing, a case-study template wired to a database but publishing nothing until you approve real data, the savings calculator promoted to the site's main call-to-action (your existing Calconic calculator, embedded), your real HubSpot form replacing the temporary contact form so leads land in your CRM, legal-safer language replacing "ERISA-compliant" everywhere, and the trust badge strip moved up out of the footer into a prominent position. Plus the badge chips you flagged get smaller icons.
+The landing page's estimator section gets a working calculator built natively in the site's own design and motion — a faithful self-hosted rebuild of your "Experience Rated Refunds" Calconic calculator, using the exact math from the Calculator_Calcs.xlsx workbook you supplied, including the second version's claims-integration toggle.
 
 ## Who it's for
-- CFO, HR, and Total Rewards leaders comparing ways to fund Accident, Hospital Indemnity and Critical Illness — and wanting to estimate savings before talking to anyone.
-- Brokers and consultants vetting the model, and the company's own team who need the site to be defensible in a post-litigation ERISA climate.
+- CFO, HR, and Total Rewards leaders who want a first-pass estimate of what an experience-rated voluntary benefits program could return, before any meeting.
+- Brokers and consultants sanity-checking the model for a client.
 
 ## Core features and experience
-1. **Badge chips fixed** — logos capped at a smaller height inside the chips (roughly half the current visual weight), captions and links unchanged; also applies to the strip's new location.
-2. **Trust strip moves up** — the Certifications & Awards row (WBENC, HR Tech Outlook award, AICPA SOC, HIPAA seal) leaves the footer and becomes a compact band directly under the hero, on the light ground, four-across desktop / two-by-two mobile; footer keeps its logo, site map and copyright.
-3. **Comparison page at /compare** — new dedicated page using the document's own draft: hero ("Three ways to fund Accident, Hospital Indemnity and Critical Illness. Only one shows you every dollar."), the at-a-glance table (Traditional carrier vs Group captive vs Employees First), the "Why employers choose" block, the "Is a group captive still right for you?" section, an FAQ, and a closing CTA to the estimator. Cells the document marks unconfirmed ("works with current carrier?", "minimum size", FAQ answers on captives, employee impact, implementation time, cost) render as clearly-labeled "Confirm" placeholders — visible, honest, impossible to mistake for published claims. Competitor claims stay generic; the unsourced visibility row is softened per the document.
-4. **Case-study template, data-driven** — the document's exact structure (client snapshot, three headline numbers, challenge, what we found, what changed, client quote, before/after table, CTA) built as a template page that reads from a new database collection, with a matching "Case Studies" strip on the landing page that only appears once at least one approved case is published. Nothing fabricated ships; the landing page shows no case-study section until real, approved data exists.
-5. **Estimator becomes the main CTA** — a new "Estimate Your Savings" section on the landing page embedding your existing Calconic calculator (same calculator ID, embedded with its official script), and every "Get Started" button across the site now jumps to it; "Talk to us" secondary CTAs go to the contact section.
-6. **HubSpot form replaces the temporary form** — the contact section embeds your real HubSpot form (portal 20497746, the form ID you provided) via the official embed script, so submissions flow into your HubSpot CRM with no manual step; a fallback link to the form's share URL covers no-JS visitors. The internal save-to-database endpoint stays in place but the page no longer depends on it.
-7. **Legal-safer messaging site-wide** — "ERISA-compliant financial model" is replaced with process language ("a financial model built to support a documented, prudent fiduciary process") everywhere it appears: hero strip, pillars, how-it-works, FAQ, meta description, noscript, JSON-LD, llms.txt. Neutral reinvestment wording already on the page stays; nothing implying past commissions were excessive.
-8. **Standard disclaimers** — a small-print line in the footer: not legal or tax advice, consult ERISA counsel, savings figures are historical and not guaranteed.
-9. **Search polish** — page title and meta description sharpened toward the document's pattern (front-loaded "Voluntary Benefits…"), category terms (group captive, voluntary benefits captive, supplemental benefits, loss ratio) woven into the comparison page copy, FAQ answer, llms.txt and meta; a one-line who-it's-for statement added to the hero; final alt-text and image-weight pass; per-route titles for the new pages.
+1. **Native calculator replaces the placeholder** — the "Estimate Your Savings" section (#estimator) hosts the working calculator, styled in the brand: bright white ground, navy serif headline, orange arrow accents, live recompute on every keystroke.
+2. **Inputs, mirroring the workbook rows:**
+   - Plans in force? — Yes / No (default Yes)
+   - Premium — $ (default $2,000,000)
+   - Benefit-Eligible Employees — count (default 20,000)
+   - Claims Loss Ratio — % (default 35%)
+   - Standard Plan Fees Percentage (sPFP) — % (default 0%)
+   - Estimated Tech Credits — $ (default $0) with a Tech Credits Percentage helper (% of premium)
+   - **Include claims integration? — Yes / No (default No)** — the second version's toggle; when No, the calculator behaves exactly like the current single version
+3. **The workbook's exact math (defaults reproduce your $700,000 worked example):**
+   - Estimated Claims = Premium × Claims Loss Ratio (2M × 35% = $700,000)
+   - Estimated Plan Expenses = Premium × (30% + sPFP) (2M × 30% = $600,000)
+   - **Experience Rated Refunds = Premium − Estimated Claims − Estimated Plan Expenses + Estimated Tech Credits** (2M − 700k − 600k + 0 = **$700,000**)
+   - With claims integration ON, the workbook's constants apply: Claims Loss Ratio Increase (34%) raises the effective loss ratio, and the Enhanced Plan Fees Percentage (12%) raises plan fees. Both constants sit in small, editable "advanced" fields so your team can correct them on the page.
+   - "Plans in force? No" → refund shows $0 with a plain-English note.
+4. **Result moment** — a navy result panel with the refund as a large animated dollar counter (the page's existing count-up motion), a full breakdown beneath it (claims, expenses, tech credits), refund per eligible employee, and the effective loss ratio.
+5. **Honest framing** — the widget's trust line as a static note: "All carrier and program expenses are capped and fully transparent." Plus "Estimate only — historical, company-reported results; not guaranteed" disclaimer wording.
+6. **Fully wired** — currency/count formatting, every input and result carries a data-testid, two-column layout on desktop, single column on mobile, no overflow.
 
 ## User flow
-Land → bright hero states the promise and $44M proof → the trust strip (certifications and award) lands immediately → pillars and the 25% stat → "Get Started" now leads to the estimator with your real calculator → compare section invites the skeptical to /compare → comparison page lays the three models side by side, answers what's answerable, marks the rest "Confirm" → contact section shows the real HubSpot form → submission lands in HubSpot. Case studies appear automatically once the first approved study is added.
+Visitor lands → any "Get Started" scrolls to the estimator → the defaults already show a live $700,000 example (matching your workbook) → they type their own premium, loss ratio, and employees → the refund, breakdown, and per-employee figures animate live → optionally flips the claims-integration toggle → "Talk to us" leads to the contact section.
 
 ## UI/UX feel
-Same "Forward, First" art direction throughout: bright paper grounds, navy serif headlines, orange arrow motif, premium motion. The comparison table is the new hero piece — an aligned three-column grid with the Employees First column visually elevated (navy header, amber edge, subtle shadow), scrolling to a clean stacked layout on mobile. The estimator sits in a quiet white section that lets the calculator widget breathe. The trust strip under the hero shrinks the existing white-chip treatment into a slimmer band.
+Same "Forward, First" direction — bright paper ground, navy serif headlines, orange arrow motif. The calculator is a clean white card with generous fields; the navy result panel's amber animated figure is the hero of the section. Purposeful motion only: live count-up on result changes, gentle section reveal.
 
 ## Implementation phases
-- **Phase 1 — MVP (built now):** badge chip size fix; trust strip relocated under the hero; ERISA wording replaced site-wide; /compare page (with "Confirm" placeholders) added to the router and nav; case-study template system (database collection, template page, conditional landing strip — zero published cases); Calconic estimator section as the new main CTA with all buttons rewired; HubSpot form embedded in the contact section; disclaimers; title/meta/keyword polish; per-route titles; verified end-to-end on desktop and mobile.
-- **Phase 2:** you supply the comparison-page facts (carrier compatibility, minimum size, FAQ answers) and the placeholders get replaced; first real case study added with written client approval; estimator methodology documented on the page; WBENC badge linked; analytics goals wired to the estimator and form.
-- **Phase 3:** CFO/General Counsel page (Form 5500 angle), Voluntary Benefits Fiduciary Checklist lead magnet, industry pages (healthcare, higher ed, public sector, manufacturing), persona paths for CFOs/HR/brokers, podcast transcriptions as blog posts, and the off-Wix migration conversation.
+- **Phase 1 — MVP (built now):** native calculator replacing the placeholder in #estimator — all inputs, the workbook math including the claims-integration toggle and editable constants, animated result, breakdown, disclaimers, testids; verified on desktop and mobile against the workbook's worked example.
+- **Phase 2:** you confirm the two integration constants (34% CLRI, 12% ePFP) and the Tech Credits Percentage behavior (workbook shows 20, the old widget defaulted 0 — it ships 0 for neutrality); optionally save submitted estimates to the database.
+- **Phase 3:** estimator methodology section on the page; analytics goal on completed estimates.
 
 ## Assumptions
-- "Yes, case study template" is read as: build the full template system now, publish nothing until you add approved client data — the landing page simply shows no case-study section until then.
-- The Calconic calculator is embedded exactly as provided (same calculator ID); its math stays yours — the site adds no numbers of its own.
-- The HubSpot embed replaces the local contact form in the UI; the existing database endpoint remains functional but unused by the page. A no-JS fallback links to the HubSpot share URL.
-- ERISA wording replacement is literal where the phrase appears, adapted per sentence so the copy still reads naturally.
-- "Confirm" placeholders on /compare are styled as honest, visible markers (amber outline chips) — not hidden — so nothing unconfirmed ever reads as a published claim.
-- The comparison page uses the document's generic competitor descriptions only; no unsourced visibility claims, no case-status or litigation commentary on the site.
-- The trust strip moves entirely out of the footer (your "move the strip up and out of the footer"), leaving the footer as logo, site map, links, disclaimers, copyright.
-- Nav gains one item ("Compare"); everything else in the nav stays as approved.
-- The current $44M and 25% claims stay on the page as historical company-reported figures, now covered by the disclaimer line.
+- The workbook's two integration constants (34% Claims Loss Ratio Increase, 12% Enhanced Plan Fees) are applied when the toggle is Yes, and are exposed as editable advanced fields so nothing is locked to my reading of them; the worked example ($700,000 refund) locks in the version-1 math exactly.
+- Tech Credits default to $0 (both sources agree the worked example carries no credits); the Tech Credits Percentage input auto-fills the dollar amount as a convenience and stays editable.
+- The result is labeled an estimate — the calculator is visual only; nothing is saved to the database in Phase 1.
+- Everything else on the page stays exactly as approved.
